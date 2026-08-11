@@ -1,0 +1,68 @@
+@charset "utf-8"; 
+
+/* Google Fontsから必要なフォントと太さのみを厳選して読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* -------------------------------------------
+   本文とベースラインの設定
+------------------------------------------- */
+body, td {
+  /* Noto Sans JPを優先し、無ければ標準のゴシック体 */
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 18px; /* 画像の印象に合わせ、少しだけシャープに */
+  color: #333333;  /* 完全な黒(#000)ではなくダークグレーで目の負担を軽減 */
+  line-height: 1.6; /* 行間を少し開けて可読性を上げる */
+}
+
+/* -------------------------------------------
+   見出しの設定 (DRY原則に基づく共通化)
+------------------------------------------- */
+/* フォントの種類や太さはここで一括指定し、重複を避ける */
+h1, h2, h3, h4 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700; /* ここで太字(700)を適用 */
+  color: #333333;
+}
+
+/* 文字サイズや余白など、階層ごとの違いだけを個別に書く */
+h1.title { 
+  font-size: 38px; 
+}
+h1 { 
+  font-size: 36px; 
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 10px;
+  color: DarkRed;
+  margin-top: 40px; /* 上の要素との間に余白を作る */
+}
+h2 { 
+  font-size: 32px; 
+  margin-top: 30px;
+  color: DarkBlue;
+  position: relative;
+  padding: .25em .5em .5em .75em;
+  border-left: 6px solid #3498db;
+}
+h3 { 
+  font-size: 28px; 
+  margin-top: 25px;
+  color: DarkBlue;
+
+  padding: .25em .25em .25em .75em;
+
+  border-left: 6px solid #ccc;
+}
+h4 { 
+  font-size: 24px; 
+  padding: .25em .25em .25em .75em;
+  color: DarkBlue;
+}
+
+/* -------------------------------------------
+   Rコードチャンクと出力結果の設定
+------------------------------------------- */
+code.r, pre {
+  /* 視認性の高い等幅フォント(Fira Code)を指定 */
+  font-family: 'Fira Code', monospace;
+  font-size: 15px; /* コード部分は本文より少し小さくする */
+}
