@@ -65,4 +65,5 @@ code.r, pre {
   /* 視認性の高い等幅フォント(Fira Code)を指定 */
   font-family: 'Fira Code', monospace;
   font-size: 15px; /* コード部分は本文より少し小さくする */
+  font-variant-ligatures: none; /* 合字（リガチャ）を無効化して <- をそのまま表示 */
 }
